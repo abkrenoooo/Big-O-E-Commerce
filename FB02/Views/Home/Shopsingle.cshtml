@@ -1,0 +1,140 @@
+﻿@model FB02.Models.Product
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Big O</title>
+    <link rel="shortcut icon" href="~/tmp/dist/img/logos/pro 3.png" type="image/x-icon">
+    <link rel="stylesheet" href="~/tmpV/css/woocommerce-layout.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/tmpV/css/woocommerce-smallscreen.css" type="text/css" media="only screen and (max-width: 768px)" />
+    <link rel="stylesheet" href="~/tmpV/css/woocommerce.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/tmpV/css/font-awesome.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/tmpV/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500,700%7CHerr+Von+Muellerhoff:400,500,700%7CQuattrocento+Sans:400,500,700" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/tmpV/css/easy-responsive-shortcodes.css" type="text/css" media="all" />
+</head>
+<body class="single single-product woocommerce woocommerce-page">
+    <div id="page">
+        <div class="container">
+            <header id="masthead" class="site-header">
+                <div class="flex-container">
+                    <div class="site-branding">
+                        <a href="/Home/Index" rel="home"><img width="125" src="~/tmp/dist/img/logos/pro 3.png" alt=""></a>
+                    </div><h1 style="order: 2" class="site-title"><a href="/Home/Index" rel="home">Big O</a></h1>
+
+                </div>
+                <nav id="site-navigation" class="main-navigation">
+                    <button class="menu-toggle">Menu</button>
+                    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+                    <div class="menu-menu-1-container">
+                        <ul id="menu-menu-1" class="menu">
+                            <li><a href="/Home/Index">Home</a></li>
+                            <li><a href="/Home/About">About</a></li>
+                            <li><a href="/Home/Shop">Shop</a></li>
+                            <li>
+                                <a href="#">Pages</a>
+                                <ul class="sub-menu">
+                                    @foreach (var item in ViewBag.Categories)
+                                    {
+                                        <li>
+                                            <a href="/Home/portfoliocategory?id=@item.Cid">
+                                                <img width="30" src="/Admin/RetrieveImage/@item.CName" alt="" />@item.CName
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
+                            </li>
+                            <li><a href="/Home/Contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- #masthead -->
+            <div id="content" class="site-content">
+                <div id="primary" class="content-area column full">
+                    <main id="main" class="site-main" role="main">
+                        <div id="container">
+                            <div id="content" role="main">
+                                <nav class="woocommerce-breadcrumb" itemprop="breadcrumb"><a href="#">Home</a> / <a href="#">Clothing</a> / Beige Jacket</nav>
+                                <div itemscope itemtype="http://schema.org/Product" class="product">
+                                    <div class="images">
+                                        <a href="" itemprop="image" class="woocommerce-main-image zoom" title="" data-rel="prettyPhoto">
+                                            <img src="/Admin/RetrieveImageProduct/@Model.PName" alt=""></img>
+                                        </a>
+                                    </div>
+                                    <div class="summary entry-summary">
+                                        <div class="woocommerce-product-rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+                                            <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                            <a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<span itemprop="reviewCount" class="count">2</span> customer reviews)</a>
+                                        </div>
+                                        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                                            <p class="price">
+                                                <span class="amount">@Model.Salary</span>
+                                            </p>
+                                            <meta itemprop="price" content="35" />
+                                            <meta itemprop="priceCurrency" content="USD" />
+                                            <link itemprop="availability" href="http://schema.org/InStock" />
+                                        </div>
+                                        <div itemprop="description">
+                                            <p>
+                                                @Model.Discraption</p>
+                                        </div>
+                                        <form class="cart" method="post" enctype='multipart/form-data'>
+                                            <div class="quantity">
+                                                <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" />
+                                            </div>
+                                            <button type="submit" class="single_add_to_cart_button button alt">Add to cart</button>
+                                        </form>
+                                        <div class="product_meta">
+                                            <span class="posted_in">
+                                                Categories:
+                                                <a href="/Home/portfoliocategory?id=@Model.PCategory" rel="tag">@Model.Category.CName</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!-- .summary -->
+                                    <div class="woocommerce-tabs wc-tabs-wrapper">
+                                        <div class="panel entry-content wc-tab" id="tab-description">
+                                            <h2>Product Description</h2>
+                                            <p>
+                                                @Model.Discraption
+                                            </p>
+                                        </div>
+                                        <div class="panel entry-content wc-tab" id="tab-reviews">
+                                            <div id="reviews">
+                                                
+                                                
+                                                <div class="clear">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                    <!-- #main -->
+                </div>
+                <!-- #primary -->
+            </div>
+            <!-- #content -->
+        </div>
+        <!-- .container -->
+        <footer id="colophon" class="site-footer">
+            <div class="container">
+                <div class="site-info">
+                    <h1 style="font-family: 'Herr Von Muellerhoff';color: #ccc;font-weight:300;text-align: center;margin-bottom:0;margin-top:0;line-height:1.4;font-size: 46px;">Moschino</h1>
+                    <a target="blank" href="https://www.wowthemes.net/">&copy; Moschino - Free HTML Template by WowThemes.net</a>
+                </div>
+            </div>
+        </footer>
+        <a href="#top" class="smoothup" title="Back to top"><span class="genericon genericon-collapse"></span></a>
+    </div>
+    <!-- #page -->
+    <script src="~/tmpV/js/jquery.js"></script>
+    <script src="~/tmpV/js/plugins.js"></script>
+    <script src="~/tmpV/js/scripts.js"></script>
+    <script src="~/tmpV/js/masonry.pkgd.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+﻿@model List<FB02.Models.Product>
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Big O</title>
+    <link rel="shortcut icon" href="~/tmp/dist/img/logos/pro 3.png" type="image/x-icon">
+    <link rel="stylesheet" href="~/tmpV/css/woocommerce-layout.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/tmpV/css/woocommerce-smallscreen.css" type="text/css" media="only screen and (max-width: 768px)" />
+    <link rel="stylesheet" href="~/tmpV/css/woocommerce.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/tmpV/css/font-awesome.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/tmpV/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500,700%7CHerr+Von+Muellerhoff:400,500,700%7CQuattrocento+Sans:400,500,700" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/tmpV/css/easy-responsive-shortcodes.css" type="text/css" media="all" />
+</head>
+<body class="home page page-template page-template-template-portfolio page-template-template-portfolio-php">
+    <div id="page">
+        <div class="container">
+            <header id="masthead" class="site-header">
+                <div class="flex-container">
+                    <div class="site-branding">
+                        <a href="/Home/Index" rel="home"><img width="125" src="~/tmp/dist/img/logos/pro 3.png" alt=""></a>
+                    </div><h1 style="order: 2" class="site-title"><a href="/Home/Index" rel="home">Big O</a></h1>
+
+                </div>
+                <nav id="site-navigation" class="main-navigation">
+                    <button class="menu-toggle">Menu</button>
+                    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+                    <div class="menu-menu-1-container">
+                        <ul id="menu-menu-1" class="menu">
+                            <li><a href="/Home/Index">Home</a></li>
+                            <li><a href="/Home/About">About</a></li>
+                            <li><a href="/Home/Shop">Shop</a></li>
+                            <li>
+                                <a href="#">Pages</a>
+                                <ul class="sub-menu">
+                                    @foreach (var item in ViewBag.Categories)
+                                    {
+                                        <li>
+                                            <a href="/Home/portfoliocategory?id=@item.Cid">
+                                                <img width="30" src="/Admin/RetrieveImage/@item.CName" alt="" />@item.CName
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
+                            </li>
+                            <li><a href="/Home/Contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- #masthead -->
+            <div id="content" class="site-content">
+                <div id="primary" class="content-area column full">
+                    <main id="main" class="site-main">
+                        <div class="grid portfoliogrid">
+                            @foreach (var item in Model)
+                            {
+                                <article class="hentry">
+                                    <header class="entry-header">
+                                        <div class="entry-thumbnail">
+                                            <a href="/Home/portfolioitem?id=@item.Id"><img src="/Admin/RetrieveImageProduct/@item.PName" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="p1" /></a>
+                                        </div>
+                                        <h2 class="entry-title"><a href="/Home/portfolioitem?id=@item.Id" rel="bookmark"> @item.PName</a></h2>
+                                        <a class='portfoliotype' <a href="/Home/portfoliocategory?id=@item.PCategory">@item.Category.CName</a>
+                                        <h2 class="entry-title">@item.Salary</h2>
+                                    </header>
+                                </article>
+                            }
+
+
+                        </div>
+                        <!-- .grid -->
+
+                        <nav class="pagination">
+                            <span class="page-numbers current">1</span>
+                            <a class="page-numbers" href="#">2</a>
+                            <a class="next page-numbers" href="#">Next »</a>
+                        </nav>
+                        <br />
+
+                    </main>
+                    <!-- #main -->
+                </div>
+                <!-- #primary -->
+            </div>
+            <!-- #content -->
+        </div>
+        <!-- .container -->
+        <footer id="colophon" class="site-footer">
+            <div class="container">
+                <div class="site-info">
+                    <h1 style="font-family: 'Herr Von Muellerhoff';color: #ccc;font-weight:300;text-align: center;margin-bottom:0;margin-top:0;line-height:1.4;font-size: 46px;">Big O</h1>
+                    <a target="blank" href="/Home/Index">&copy; Big O - We Are The Future</a>
+                </div>
+            </div>
+        </footer>
+        <a href="#top" class="smoothup" title="Back to top"><span class="genericon genericon-collapse"></span></a>
+    </div>
+    <!-- #page -->
+    <script src="~/tmpV/js/jquery.js"></script>
+    <script src="~/tmpV/js/plugins.js"></script>
+    <script src="~/tmpV/js/scripts.js"></script>
+    <script src="~/tmpV/js/masonry.pkgd.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+﻿
+@model FB02.Models.Usere
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="ar">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+    <title>Big O | AddUser</title>
+
+    <link rel="shortcut icon" href="~/tmp/dist/img/logos/pro 3.png" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="~/tmp/plugins/datatables/dataTables.bootstrap4.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/tmp/dist/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="~/tmp/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="~/tmp/plugins/toastr/toastr.min.css">
+    <!-- bootstrap rtl -->
+    <link rel="stylesheet" href="~/tmp/dist/css/bootstrap-rtl.min.css">
+    <!-- template rtl version -->
+    <link rel="stylesheet" href="~/tmp/dist/css/custom-style.css">
+
+</head>
+
+<body class="hold-transition login-page">
+
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <section class="content row justify-content-center w-100">
+
+                        <div class="col-md-6 my-3 ">
+                            <div class="card ">
+                                <div class="card-header">
+                                    <h3 class="card-title">إضافة مستخدم</h3>
+                                </div>
+
+                                <!-- form start -->
+                                <form action="/Admin/UserEdit" method="post">
+                                    <div class="card-body ">
+                                        <div class="form-group">
+                                            <label for="UserName">إسم المستخدم</label>
+                                            <input name="UserName" type="text" class="form-control" id="UserName"value="@Model.UserName" required placeholder="الإسم الذي سيتم تسجيل الدخول به">
+                                        </div>
+                                        <input type="hidden" name="Id" value="@Model.ID" />
+                                        <div class="form-group">
+                                            <label for="Fname">الإسم كامل</label>
+                                            <input name="Fname" required type="text" class="form-control" id="Fname" value="@Model.Fname" placeholder="أدخل الإسم كامل">
+                                        </div>
+
+                                        <!-- pass -->
+                                        <div class="form-group">
+                                            <label for="Password">كلمة المرور</label>
+                                            <input name="Password" required type="password" class="form-control" id="Password" value="@Model.Password" placeholder="كلمة المرور">
+                                        </div>
+
+                                    </div>
+                                    <div class="card-footer">
+                                        <button class="btn btn-primary">تعديل المستخدم <small><em class="fa fa-plus"></em></small></button>
+                                    </div>
+                                </form>
+
+
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!-- /.col -->
+                        <!-- /.row -->
+                    </section>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /.login-box -->
+        <!-- jQuery -->
+        <script src="~/tmp/plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="~/tmp/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- iCheck -->
+        <script src="~/tmp/plugins/iCheck/icheck.min.js"></script>
+        <!-- Toastr -->
+        <script src="~/tmp/plugins/sweetalert2/sweetalert2.min.js"></script>
+        <script src="~/tmp/plugins/toastr/toastr.min.js"></script>
+
+</body>
+
+</html>

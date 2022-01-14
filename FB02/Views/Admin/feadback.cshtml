@@ -1,0 +1,430 @@
+﻿@model List<FB02.Models.Contact>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="ar">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Big O</title>
+
+    <link rel="shortcut icon" href="~/tmp/dist/img/logos/pro 3.png" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="~/tmp/plugins/datatables/dataTables.bootstrap4.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/tmp/dist/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="~/tmp/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="~/tmp/plugins/toastr/toastr.min.css">
+    <!-- bootstrap rtl -->
+    <link rel="stylesheet" href="~/tmp/dist/css/bootstrap-rtl.min.css">
+    <!-- template rtl version -->
+    <link rel="stylesheet" href="~/tmp/dist/css/custom-style.css">
+
+</head>
+
+<body class="hold-transition sidebar-mini ">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="index3.html" class="nav-link">زيارة الموقع</a>
+                </li>
+
+            </ul>
+
+            <!-- Right navbar links -->
+            <ul class="navbar-nav mr-auto">
+                <!-- Messages Dropdown Menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell"></i>
+                        <span class="badge badge-danger navbar-badge">3</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-left">
+                        <!-- Message Start -->
+                        <a href="#" class="dropdown-item">
+                            <div class="media">
+                                <img src="~/tmp/./dist/img/logos/pro 3.png" alt="" class="img-size-50 ml-3 img-circle">
+                                <div class="media-body">
+                                    <h3 class="dropdown-item-title">
+                                        محمدرضا عطوان
+                                        <span class="float-left text-sm text-danger"><i class="fa fa-star"></i></span>
+                                    </h3>
+                                    <p class="text-sm">Tusskan</p>
+                                    <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> New</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <!-- Message End -->
+                        <!-- Message Start -->
+                        <a href="#" class="dropdown-item">
+                            <div class="media">
+                                <img src="~/tmp/./dist/img/logos/pro 3.png" alt="User Avatar" class="img-size-50 ml-3 img-circle">
+                                <div class="media-body">
+                                    <h3 class="dropdown-item-title">
+                                        محمدرضا عطوان
+                                        <span class="float-left text-sm text-danger"><i class="fa fa-star"></i></span>
+                                    </h3>
+                                    <p class="text-sm">Tusskan</p>
+                                    <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> New </p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <!-- Message End -->
+                        <!-- Message Start -->
+                        <a href="#" class="dropdown-item">
+                            <div class="media">
+                                <img src="~/tmp/./dist/img/logos/pro 3.png" alt="User Avatar" class="img-size-50 ml-3 img-circle">
+                                <div class="media-body">
+                                    <h3 class="dropdown-item-title">
+                                        محمدرضا عطوان
+                                        <span class="float-left text-sm text-danger"><i class="fa fa-star"></i></span>
+                                    </h3>
+                                    <p class="text-sm">Tusskan</p>
+                                    <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> New </p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <!-- Message End -->
+
+
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item dropdown-footer">عرض المزيد</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
+                        <i class="fa fa-th-large"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="index3.html" class="brand-link">
+                <img src="~/tmp/./dist/img/logos/pro 3.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">Bog O</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div>
+                    <!-- Sidebar user panel (optional) -->
+                    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                        <div class="image">
+                            <img src="~/tmp/./dist/img/logos/pro 3.png" class="img-circle elevation-2" alt="User Image">
+                        </div>
+                        <div class="info">
+                            <a href="#" class="d-block"> Mahdy & Abkr</a>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Menu -->
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <li class="nav-item">
+                                <a href="/Admin/Index" class="nav-link ">
+                                    <i class="nav-icon fa fa-home"></i>
+                                    <p>
+                                        الرئيسية
+                                    </p>
+                                </a>
+                            </li>
+                            <div class="dropdown-divider" style="border-color: #676768;"></div>
+                            <li class="nav-item has-treeview">
+                                <a href="#" class="nav-link ">
+                                    <i class="nav-icon fa fa-briefcase"></i>
+                                    <p>
+                                        المنتجات
+                                        <i class="right fa fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="/Admin/AddProduct" class="nav-link">
+                                            <i class="fa fa-plus nav-icon"></i>
+                                            <p>إضافة منتج</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/Admin/ShowProduct" class="nav-link">
+                                            <i class="fa fa-tasks nav-icon"></i>
+                                            <p>إدارة المنتجات</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <div class="dropdown-divider" style="border-color: #676768;"></div>
+                            <li class="nav-item has-treeview">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fa fa-users"></i>
+                                    <p>
+                                        المستخدمين
+                                        <i class="right fa fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="/Admin/AddUser" class="nav-link">
+                                            <i class="fa fa-user-plus nav-icon"></i>
+                                            <p>إضافة مستخدم</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/Admin/ShowUser" class="nav-link">
+                                            <i class="fa fa-users  nav-icon"></i>
+                                            <p>إدارة المستخدمين</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <div class="dropdown-divider" style="border-color: #676768;"></div>
+                            <li class="nav-item ">
+                                <a href="/Admin/ShowCategory" class="nav-link">
+                                    <i class="nav-icon fa fa-th"></i>
+                                    <p>
+                                        إدارة التصنيفات
+                                    </p>
+                                </a>
+                            </li>
+                            <div class="dropdown-divider" style="border-color: #676768;"></div>
+                            <li class="nav-item ">
+                                <a href="/Admin/feadback" class="nav-link active">
+                                    <i class="fa fa-eye nav-icon"></i>
+                                    <p>
+                                        الملاحظات <small class="badge badge-success">1</small>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a href="/Admin/AddCategory" class="nav-link">
+                                    <i class="nav-icon fa fa-cart-arrow-down"></i>
+                                    <p>
+                                        الطلبات <small class="badge badge-success">6</small>
+                                    </p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item ">
+                                <a href="custom-ads.html" class="nav-link">
+                                    <i class="nav-icon fa fa-image"></i>
+                                    <p>
+                                        تخصيص المظهر
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- /.sidebar-menu -->
+                </div>
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <section class="content row w-100">
+                            <div class="col-12 my-3">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title"> الملاحظات</h3>
+                                    </div>
+                                    <!-- table -->
+                                    <div class="card-body table-responsive">
+                                        <table id="example1" class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>إسم المستخدم</th>
+                                                    <th>الإيمال</th>
+                                                    <th>الملاحظة</th>
+                                                    <th>الإجراءات</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+
+                                                    @foreach (var item in Model)
+                                                    {
+                                                    <tr>
+                                                        <td>@item.Name</td>
+                                                        <td>@item.Email</td>
+                                                        <td>
+                                                            <p><textarea rows="3" placeholder="Message *">@item.Message</textarea></p>
+                                                        </td>
+                                                        <td>
+                                                            <a href="/Admin/feadbackDelete?id=@item.id" onclick="return confirm('R U Sure')">
+                                                                <span title="حذف" class="btn btn-danger m-2 swalDefaultError"><em class="fa fa-trash"></em></span>
+                                                            </a>
+                                                    </tr>
+                                                }
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- /.card-body -->
+                                    </div>
+                                    <!-- /.card -->
+                                </div>
+                                <!-- /.col -->
+                        </div>
+
+                        <!-- /.row -->
+                        </section>
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content -->
+            <!-- /.content-wrapper -->
+            <!-- Control Sidebar -->
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Control sidebar content goes here -->
+                <div class="p-3">
+                    <h5>Title</h5>
+                    <p>Sidebar content</p>
+                </div>
+            </aside>
+            <!-- /.control-sidebar -->
+            <!-- Main Footer -->
+            <footer class="main-footer">
+                <!-- To the right -->
+                <div class="float-left d-none d-sm-inline">
+                    Big O
+                </div>
+                <!-- Default to the left -->
+                <strong>CopyRights &copy; 2021 <a href="">Big O</a></strong>
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+        <!-- REQUIRED SCRIPTS -->
+        <!-- jQuery -->
+        <script src="~/tmp/plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="~/tmp/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- DataTables -->
+        <script src="~/tmp/plugins/datatables/jquery.dataTables.js"></script>
+        <script src="~/tmp/plugins/datatables/dataTables.bootstrap4.js"></script>
+        <!-- SlimScroll -->
+        <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="~/tmp/plugins/fastclick/fastclick.js"></script>
+        <!-- AdminLTE App -->
+        <script src="~/tmp/dist/js/adminlte.min.js"></script>
+        <!-- page script -->
+        <script>
+            $(function () {
+                $("#example1").DataTable({
+                    "dom": '<"toolbar">frtip',
+                    "language": {
+                        "paginate": {
+                            "next": "التالي",
+                            "previous": "السابق"
+                        },
+                        "search": " بحث ",
+                    },
+                    "info": false,
+                    "ordering": false,
+
+                    "paging": false,
+                });
+            });
+        </script>
+        <script src="~/tmp/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+        <script>
+            $(function () {
+                bsCustomFileInput.init();
+            });
+        </script>
+        <!-- Toastr -->
+        <script src="~/tmp/plugins/sweetalert2/sweetalert2.min.js"></script>
+        <script src="~/tmp/plugins/toastr/toastr.min.js"></script>
+        <script>
+            $(function () {
+                var Toast = Swal.mixin({
+                    toast: true,
+                    position: 'bottom-start',
+                    showConfirmButton: false,
+                    timer: 5000
+                });
+
+                $('.swalDefaultSuccess').click(function () {
+                    Toast.fire({
+
+                        icon: 'success',
+                        title: 'رسالة من الباك إند '
+                    })
+                });
+                $('.swalDefaultInfo').click(function () {
+                    Toast.fire({
+                        icon: 'info',
+                        title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+                    })
+                });
+                $('.swalDefaultError').click(function () {
+                    Toast.fire({
+                        icon: 'error',
+                        title: 'ايرور من الباك إند'
+                    })
+                });
+                $('.swalDefaultWarning').click(function () {
+                    Toast.fire({
+                        icon: 'warning',
+                        title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+                    })
+                });
+                $('.swalDefaultQuestion').click(function () {
+                    Toast.fire({
+                        icon: 'question',
+                        title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+                    })
+                });
+            });
+        </script>
+        <script>
+            function showPassword(e) {
+                document.getElementById(e).toggleAttribute('disabled')
+                if (document.getElementById(e).hasAttribute('type')) {
+                    document.getElementById(e).toggleAttribute('type')
+                } else {
+
+                    document.getElementById(e).setAttribute('type', 'password')
+                }
+
+            }
+        </script>
+    </body>
+
+</html>

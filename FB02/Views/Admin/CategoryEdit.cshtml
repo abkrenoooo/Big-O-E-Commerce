@@ -1,0 +1,106 @@
+﻿
+@model FB02.Models.Category
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="ar">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+    <title>Big O | CategoryEdit</title>
+
+    <link rel="shortcut icon" href="~/tmp/dist/img/logos/pro 3.png" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="~/tmp/plugins/datatables/dataTables.bootstrap4.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/tmp/dist/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="~/tmp/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="~/tmp/plugins/toastr/toastr.min.css">
+    <!-- bootstrap rtl -->
+    <link rel="stylesheet" href="~/tmp/dist/css/bootstrap-rtl.min.css">
+    <!-- template rtl version -->
+    <link rel="stylesheet" href="~/tmp/dist/css/custom-style.css">
+
+</head>
+
+<body class="hold-transition login-page">
+
+    <div class="login-box">
+
+        <div class="w-100 text-center mb-5">
+            <img width="150" src="~/tmp/dist/img/logos/pro 3.png" alt="">
+        </div>
+        <div class="w-100 text-center mt-4">
+
+            <br />
+            <!-- /.login-logo -->
+            <div class="card">
+                <div class="card-body login-card-body">
+
+                    <p class="login-box-msg"> اضافة صنف</p>
+                    <div class="card ">
+                        <!-- form start -->
+
+                        <h2>Basic File Upload</h2>
+                        @using (Html.BeginForm("CategoryEdit",
+                                                "Admin",
+                                                FormMethod.Post,
+                                                new { enctype = "multipart/form-data" }))
+                        {
+                    <input type="hidden" name="Cid" value="@Model.Cid" />
+                            <div class="input-group mb-3">
+                                <input type="text" id="name" name="CName" value="@Model.CName" class="form-control" placeholder="إسم الصنف">
+                                <div class="input-group-append">
+                                    <span class="fa fa-envelope input-group-text"></span>
+                                </div>
+                            </div>
+                            <small id="nameError" style="display:none" class="text-danger  error">من فضلك ادخل اسم الصنف</small>
+
+                            <div class="input-group mb-3">
+                                <input type="file" id="file" value="@Model.CName" name="file" class="form-control" placeholder="صورةالصنف">
+                                <div class="input-group-append">
+                                    <span class="fa fa-envelope input-group-text"></span>
+                                </div>
+                            </div>
+
+                            <div class="w-100 text-center mt-4">
+                                <button onclick="login()" type="submit" class="btn btn-success">Edit</button>
+                                <a href="/Admin/ShowCategory" class="btn btn-dark">Return</a>
+                            </div>
+                            <br />
+                            @ViewBag.Message
+                        }
+                    </div>
+
+                </div>
+                <!-- /.login-card-body -->
+            </div>
+        </div>
+        <!-- /.login-box -->
+        <!-- jQuery -->
+        <script src="~/tmp/plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="~/tmp/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- iCheck -->
+        <script src="~/tmp/plugins/iCheck/icheck.min.js"></script>
+        <!-- Toastr -->
+        <script src="~/tmp/plugins/sweetalert2/sweetalert2.min.js"></script>
+        <script src="~/tmp/plugins/toastr/toastr.min.js"></script>
+
+</body>
+
+</html>

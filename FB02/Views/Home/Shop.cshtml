@@ -1,0 +1,147 @@
+﻿@model List<FB02.Models.Product>
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Big O</title>
+    <link rel="shortcut icon" href="~/tmp/dist/img/logos/pro 3.png" type="image/x-icon">
+    <link rel="stylesheet" href="~/tmpV/css/woocommerce-layout.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/tmpV/css/woocommerce-smallscreen.css" type="text/css" media="only screen and (max-width: 768px)" />
+    <link rel="stylesheet" href="~/tmpV/css/woocommerce.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/tmpV/css/font-awesome.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/tmpV/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500,700%7CHerr+Von+Muellerhoff:400,500,700%7CQuattrocento+Sans:400,500,700" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/tmpV/css/easy-responsive-shortcodes.css" type="text/css" media="all" />
+</head>
+<body class="archive post-type-archive post-type-archive-product woocommerce woocommerce-page">
+    <div id="page">
+        <div class="container">
+            <header id="masthead" class="site-header">
+                <div class="flex-container">
+                    <div class="site-branding">
+                        <a href="/Home/Index" rel="home"><img width="125" src="~/tmp/dist/img/logos/pro 3.png" alt=""></a>
+                    </div><h1 style="order: 2" class="site-title"><a href="/Home/Index" rel="home">Big O</a></h1>
+
+                </div>
+                <nav id="site-navigation" class="main-navigation">
+                    <button class="menu-toggle">Menu</button>
+                    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+                    <div class="menu-menu-1-container">
+                        <ul id="menu-menu-1" class="menu">
+                            <li><a href="/Home/Index">Home</a></li>
+                            <li><a href="/Home/About">About</a></li>
+                            <li><a href="/Home/Shop">Shop</a></li>
+                            <li>
+                                <a href="#">Pages</a>
+                                <ul class="sub-menu">
+                                    @foreach (var item in ViewBag.Categories)
+                                    {
+                                        <li>
+                                            <a href="/Home/portfoliocategory?id=@item.Cid">
+                                                <img width="30" src="/Admin/RetrieveImage/@item.CName" alt="" />@item.CName
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
+                            </li>
+                            <li><a href="/Home/Contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- #masthead -->
+            <div id="content" class="site-content">
+                <div id="primary" class="content-area column full">
+                    <main id="main" class="site-main" role="main">
+                        <p class="woocommerce-result-count">
+                            Showing 1–8 of 12 results
+                        </p>
+                        <form class="woocommerce-ordering" method="get">
+                            <select name="orderby" class="orderby">
+                                <option value="menu_order" selected="selected">Default sorting</option>
+                                <option value="popularity">Sort by popularity</option>
+                                <option value="rating">Sort by average rating</option>
+                                <option value="date">Sort by newness</option>
+                                <option value="price">Sort by price: low to high</option>
+                                <option value="price-desc">Sort by price: high to low</option>
+                            </select>
+                        </form>
+                        <ul class="products">
+                            @for (int i = 0; i < Model.Count(); i++)
+                            {
+                                if (i % 4 == 0)
+                                {
+                                    <li class="first product">
+                                        <a href="/Home/Shopsingle?id=@Model[i].Id">
+                                            <span class="onsale">Sale!</span>
+                                            <img src="/Admin/RetrieveImageProduct/@Model[i].PName" alt="">
+                                            <h3>@Model[i].PName</h3>
+                                            <span class="price"><span class="amount">@Model[i].Salary</span></span>
+                                        </a><a href="#" class="button">Add to cart</a>
+                                    </li>
+                                }
+                                else if (i % 4 == 1 || i % 4 == 2)
+                                {
+                                    <li class="product">
+                                        <a href="/Home/Shopsingle?id=@Model[i].Id">
+                                            <img src="/Admin/RetrieveImageProduct/@Model[i].PName" alt="">
+                                            <h3>@Model[i].PName</h3>
+                                            <span class="price"><span class="amount">@Model[i].Salary</span></span>
+                                        </a><a href="#" class="button">Add to cart</a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="last product">
+                                        <a href="/Home/Shopsingle?id=@Model[i].Id">
+                                            <img src="/Admin/RetrieveImageProduct/@Model[i].PName" alt="">
+                                            <h3>@Model[i].PName</h3>
+                                            <span class="price"><span class="amount">@Model[i].Salary</span></span>
+                                        </a><a href="#" class="button">Add to cart</a>
+                                    </li>
+                                }
+
+                            }
+
+
+
+
+
+
+
+
+
+                        </ul>
+                        <nav class="woocommerce-pagination">
+                            <ul class="page-numbers">
+                                <li><span class="page-numbers current">1</span></li>
+                                <li><a class="page-numbers" href="#">2</a></li>
+                                <li><a class="next page-numbers" href="#">→</a></li>
+                            </ul>
+                        </nav>
+                    </main>
+                    <!-- #main -->
+                </div>
+                <!-- #primary -->
+            </div>
+            <!-- #content -->
+        </div>
+        <!-- .container -->
+        <footer id="colophon" class="site-footer">
+            <div class="container">
+                <div class="site-info">
+                    <h1 style="font-family: 'Herr Von Muellerhoff';color: #ccc;font-weight:300;text-align: center;margin-bottom:0;margin-top:0;line-height:1.4;font-size: 46px;">Moschino</h1>
+                    <a target="blank" href="https://www.wowthemes.net/">&copy; Moschino - Free HTML Template by WowThemes.net</a>
+                </div>
+            </div>
+        </footer>
+        <a href="#top" class="smoothup" title="Back to top"><span class="genericon genericon-collapse"></span></a>
+    </div>
+    <!-- #page -->
+    <script src="~/tmpV/js/jquery.js"></script>
+    <script src="~/tmpV/js/plugins.js"></script>
+    <script src="~/tmpV/js/scripts.js"></script>
+    <script src="~/tmpV/js/masonry.pkgd.min.js"></script>
+</body>
+</html>
